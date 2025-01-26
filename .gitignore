@@ -1,7 +1,4 @@
-# Project specific files
-todo_list.txt
-
-# Python
+# Python development
 __pycache__/
 *.py[cod]
 *$py.class
@@ -23,7 +20,7 @@ var/
 .installed.cfg
 *.egg
 
-# IDEs and editors
+# IDE settings
 .idea/
 .vscode/
 *.swp
