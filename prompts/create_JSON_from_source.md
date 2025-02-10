@@ -67,6 +67,8 @@ Below are the fields to populate **in the exact order** shown. Return only valid
      - If rest is “as little as possible,” assume 15 sec.  
      - If sets/rest durations are explicitly stated, use those.  
      - Take the average of these ranges.  
+     - Do not factor in warmups in the calculation
+     - If the source material discusses assistance, auxiliary, or accessory work, or any other part of the workout is not directly part of the loading module, do not factor it into the calculation
 
 10. **time_per_session_breakdown**  
    - Show how you arrived at avg_time_session.  

@@ -27,6 +27,9 @@ var/
 *.swo
 *~
 
+# Obsidian
+.obsidian/
+
 # OS generated files
 .DS_Store
 .DS_Store?
