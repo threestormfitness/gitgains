@@ -1,0 +1,38 @@
+{
+    "id": "block_periodization_basic",
+    "name": "Basic Block Periodization",
+    "structure": {
+        "accumulation": {
+            "duration_weeks": 4,
+            "volume": "high",
+            "intensity": "moderate",
+            "preferred_loading_modules": ["5x10_straightsets", "gvt_10x10"],
+            "exercise_selection": "varied",
+            "recovery_demands": "high"
+        },
+        "intensification": {
+            "duration_weeks": 3,
+            "volume": "moderate",
+            "intensity": "high",
+            "preferred_loading_modules": ["5x5_straightsets", "cluster_90pct_1rm"],
+            "exercise_selection": "specific",
+            "recovery_demands": "very_high"
+        },
+        "peaking": {
+            "duration_weeks": 2,
+            "volume": "low",
+            "intensity": "very_high",
+            "preferred_loading_modules": ["3x3_straightsets", "singles_doubles"],
+            "exercise_selection": "competition_specific",
+            "recovery_demands": "moderate"
+        }
+    },
+    "suitable_for": ["strength", "powerlifting", "olympic_lifting"],
+    "min_training_age": "intermediate",
+    "notes": "Classic block periodization approach popularized by Verkhoshansky",
+    "warnings": [
+        "Requires good recovery capabilities",
+        "Not suitable for beginners",
+        "May need modification for athletes in-season"
+    ]
+}

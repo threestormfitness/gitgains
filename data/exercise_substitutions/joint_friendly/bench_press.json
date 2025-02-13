@@ -1,0 +1,26 @@
+{
+    "id": "bench_press_substitutions",
+    "primary_movement": "Barbell Bench Press",
+    "movement_pattern": "horizontal_push",
+    "substitutions": [
+        {
+            "exercise": "Dumbbell Floor Press",
+            "rationale": "Limits shoulder extension, reducing stress on anterior shoulder",
+            "loading_compatibility": ["3x5_straightsets", "5x5_cluster"],
+            "equipment_needed": ["dumbbells"],
+            "setup_complexity": "low",
+            "carryover_rating": 0.8
+        },
+        {
+            "exercise": "Swiss Bar Bench Press",
+            "rationale": "Neutral grip reduces internal rotation of shoulder",
+            "loading_compatibility": ["any"],
+            "equipment_needed": ["swiss_bar", "power_rack"],
+            "setup_complexity": "medium",
+            "carryover_rating": 0.9
+        }
+    ],
+    "notes": "These substitutions focus on reducing shoulder stress while maintaining pressing strength",
+    "references": ["Wendler 5/3/1", "EliteFTS Articles"],
+    "tags": ["shoulder_health", "pressing", "powerlifting"]
+}

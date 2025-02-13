@@ -2,40 +2,40 @@
 
 ## Module Details
 
-| Field                          | Value                                                       |
-|--------------------------------|-------------------------------------------------------------|
-| **id**                         | `delorme_apre6rm_10min`                                     |
-| **name**                       | `APRE 6RM — Autoregulatory Strength & Size (10 min per exercise)` |
-| **author_source**              | `Thomas DeLorme`                                            |
-| **cycle_duration**             | `open`                                                      |
-| **total_sets**                 | `4 sets`                                                    |
-| **reps**                       | `varies`                                                    |
-| **intensity_unit**             | `%`                                                         |
-| **intensity_range**            | `50-90% 1RM`                                                |
-| **avg_time_session**           | `10`                                                        |
-| **time_per_session_breakdown** | `4 sets total: ~30-45s each plus 1-5 min rest = ~10 min total` |
-| **amrap**                      | `yes`                                                       |
-| **timed**                      | `no`                                                        |
-| **emom**                       | `no`                                                        |
-| **train_to_failure**           | `yes`                                                       |
-| **superset_type**              | `N/A`                                                       |
-| **spec_movement**              | `squat, deadlift, press, row`                              |
-| **autoregulated**              | `yes`                                                       |
-| **drop_sets**                  | `no`                                                        |
-| **rest_pause**                 | `no`                                                        |
-| **cluster**                    | `no`                                                        |
-| **tempo_spec**                 | `no`                                                        |
-| **wave_sets**                  | `no`                                                        |
-| **ladder_sets**                | `n/a`                                                       |
-| **density_sets**               | `no`                                                        |
-| **straight_sets**              | `no`                                                        |
-| **contrast_sets**              | `no`                                                        |
-| **total_rep_target**           | `n/a`                                                       |
-| **deload**                     | `no`                                                        |
-| **overview_and_execution**     | `Perform four sets. Sets 1 and 2 use lighter loads (50% and 75% of 6RM). Set 3 is AMRAP with your 6RM (~85% 1RM). Set 4 uses an adjusted load based on Set 3 performance. Next session’s load is chosen from the adjustment chart. Rest 1–5 minutes depending on set.` |
+| Field                          | Value                                                                                                                                                                                                                                                                             |
+| ------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**                         | `delorme_apre6rm_10min`                                                                                                                                                                                                                                                           |
+| **name**                       | `APRE 6RM — Autoregulatory Strength & Size (10 min per exercise)`                                                                                                                                                                                                                 |
+| **author_source**              | `Thomas DeLorme`                                                                                                                                                                                                                                                                  |
+| **cycle_duration**             | `open`                                                                                                                                                                                                                                                                            |
+| **total_sets**                 | `4 sets`                                                                                                                                                                                                                                                                          |
+| **reps**                       | `varies`                                                                                                                                                                                                                                                                          |
+| **intensity_unit**             | `%`                                                                                                                                                                                                                                                                               |
+| **intensity_range**            | `50-90% 1RM`                                                                                                                                                                                                                                                                      |
+| **avg_time_session**           | `10`                                                                                                                                                                                                                                                                              |
+| **time_per_session_breakdown** | `4 sets total: ~30-45s each plus 1-5 min rest = ~10 min total`                                                                                                                                                                                                                    |
+| **amrap**                      | `yes`                                                                                                                                                                                                                                                                             |
+| **timed**                      | `no`                                                                                                                                                                                                                                                                              |
+| **emom**                       | `no`                                                                                                                                                                                                                                                                              |
+| **train_to_failure**           | `yes`                                                                                                                                                                                                                                                                             |
+| **superset_type**              | `N/A`                                                                                                                                                                                                                                                                             |
+| **spec_movement**              | `squat, deadlift, press, row`                                                                                                                                                                                                                                                     |
+| **autoregulated**              | `yes`                                                                                                                                                                                                                                                                             |
+| **drop_sets**                  | `no`                                                                                                                                                                                                                                                                              |
+| **rest_pause**                 | `no`                                                                                                                                                                                                                                                                              |
+| **cluster**                    | `no`                                                                                                                                                                                                                                                                              |
+| **tempo_spec**                 | `no`                                                                                                                                                                                                                                                                              |
+| **wave_sets**                  | `no`                                                                                                                                                                                                                                                                              |
+| **ladder_sets**                | `n/a`                                                                                                                                                                                                                                                                             |
+| **density_sets**               | `no`                                                                                                                                                                                                                                                                              |
+| **straight_sets**              | `no`                                                                                                                                                                                                                                                                              |
+| **contrast_sets**              | `no`                                                                                                                                                                                                                                                                              |
+| **total_rep_target**           | `n/a`                                                                                                                                                                                                                                                                             |
+| **deload**                     | `no`                                                                                                                                                                                                                                                                              |
+| **overview_and_execution**     | `Perform four sets. Sets 1 and 2 use lighter loads (50% and 75% of 6RM). Set 3 is AMRAP with your 6RM (~85% 1RM). Set 4 uses an adjusted load based on Set 3 performance. Next session’s load is chosen from the adjustment chart. Rest 1–5 minutes depending on set.`            |
 | **example_application**        | `An intermediate lifter with a 200 lb squat 6RM might do: Set 1: 10 reps at 100 lb, rest 1–2 min; Set 2: 6 reps at 150 lb, rest 2–3 min; Set 3: AMRAP at 200 lb, rest 3–5 min; Set 4: adjust weight per the chart; next session add 5–10 lb if 8–12 reps were achieved in Set 3.` |
-| **important_notes**            | `Accurately identify your true 6RM and track AMRAP performance in Set 3 to guide progressive loading. Emphasize proper form over grinding reps.` |
-| **volume_metrics**             | `4 total work sets per exercise: ~10 + 6 + AMRAP + ~6 reps = ~20–30 reps total` |
+| **important_notes**            | `Accurately identify your true 6RM and track AMRAP performance in Set 3 to guide progressive loading. Emphasize proper form over grinding reps.`                                                                                                                                  |
+| **volume_metrics**             | `4 total work sets per exercise: ~10 + 6 + AMRAP + ~6 reps = ~20–30 reps total`                                                                                                                                                                                                   |
 
 ---
 
