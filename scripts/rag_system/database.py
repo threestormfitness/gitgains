@@ -17,7 +17,7 @@ from chromadb.config import Settings
 from chromadb.api import ClientAPI
 from openai import OpenAI
 
-from config import DEFAULT_CONFIG, RAGConfig
+from .config import DEFAULT_CONFIG, RAGConfig
 
 # Set up logging
 logging.basicConfig(
@@ -63,7 +63,7 @@ class GitGainsDB:
         )
         return response.data[0].embedding
     
-    def get_collection(self, name: str):
+    def _get_collection(self, name: str):
         """
         Get or create a collection
         """
@@ -79,7 +79,7 @@ class GitGainsDB:
         """
         Add a document to a specific collection
         """
-        collection = self.get_collection(collection_name)
+        collection = self._get_collection(collection_name)
         
         # Generate embedding
         embedding = self.get_embedding(content)
@@ -103,7 +103,7 @@ class GitGainsDB:
         """
         Query a specific collection with optional filters
         """
-        collection = self.get_collection(collection_name)
+        collection = self._get_collection(collection_name)
         
         # Generate embedding
         query_embedding = self.get_embedding(query_text)
@@ -251,3 +251,51 @@ class GitGainsDB:
         
         self.collections = {}
         logger.info("Reset database - all collections deleted")
+    
+    def get_collection_metadata(self, collection_name: str) -> Dict:
+        """
+        Get metadata about a collection
+        """
+        collection = self._get_collection(collection_name)
+        if not collection:
+            return {"error": f"Collection {collection_name} not found"}
+        
+        # Get all documents in the collection
+        results = collection.get(include=["metadatas", "documents"])
+        
+        # Basic stats
+        doc_count = len(results["ids"]) if "ids" in results else 0
+        
+        # Extract metadata fields if available
+        metadata_fields = set()
+        unique_values = {}
+        
+        if "metadatas" in results and results["metadatas"]:
+            for metadata in results["metadatas"]:
+                for key in metadata:
+                    metadata_fields.add(key)
+                    if key not in unique_values:
+                        unique_values[key] = set()
+                    unique_values[key].add(metadata[key])
+        
+        # Convert sets to lists for JSON serialization
+        for key in unique_values:
+            unique_values[key] = list(unique_values[key])
+        
+        return {
+            "collection_name": collection_name,
+            "document_count": doc_count,
+            "metadata_fields": list(metadata_fields),
+            "unique_values": unique_values
+        }
+    
+    def get_all_collections_metadata(self) -> Dict:
+        """
+        Get metadata about all collections
+        """
+        collections_info = {}
+        
+        for collection_name in self.config.collections:
+            collections_info[collection_name] = self.get_collection_metadata(collection_name)
+        
+        return collections_info

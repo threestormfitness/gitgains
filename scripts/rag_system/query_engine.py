@@ -11,8 +11,8 @@ import logging
 from typing import Dict, List, Optional, Union, Any
 
 from openai import OpenAI
-from config import DEFAULT_CONFIG, RAGConfig
-from database import GitGainsDB
+from .config import DEFAULT_CONFIG, RAGConfig
+from .database import GitGainsDB
 
 # Set up logging
 logging.basicConfig(
@@ -213,6 +213,14 @@ class QueryEngine:
         questions about workout programming, loading modules, exercise selection, and 
         periodization strategies. If the information isn't in the context, say so rather 
         than making things up.
+        
+        Provide detailed, comprehensive answers that thoroughly explain concepts and include
+        practical examples. Don't be afraid to write lengthy responses when the question
+        warrants in-depth explanation. Include scientific reasoning and evidence where relevant.
+        
+        When creating workout programs, include detailed progression strategies, exercise
+        variations, and specific implementation guidelines. Make your answers actionable
+        and educational.
         """
         
         system_prompt = system_prompt or default_system_prompt
@@ -225,7 +233,8 @@ class QueryEngine:
         response = self.openai_client.chat.completions.create(
             model=self.config.openai_model,
             messages=messages,
-            temperature=self.config.openai_temperature
+            temperature=self.config.openai_temperature,
+            max_tokens=2000  # Increased max tokens for more detailed responses
         )
         
         return response.choices[0].message.content

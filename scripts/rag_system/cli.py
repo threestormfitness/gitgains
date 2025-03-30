@@ -18,9 +18,9 @@ from rich.panel import Panel
 from rich.markdown import Markdown
 from rich.progress import Progress
 
-from config import DEFAULT_CONFIG, RAGConfig, DATA_PATHS, COLLECTIONS
-from database import GitGainsDB
-from query_engine import QueryEngine
+from .config import DEFAULT_CONFIG, RAGConfig, DATA_PATHS, COLLECTIONS
+from .database import GitGainsDB
+from .query_engine import QueryEngine
 
 # Set up logging
 logging.basicConfig(
@@ -234,6 +234,45 @@ def info():
         title="GitGains RAG System Info",
         border_style="blue"
     ))
+
+@cli.command()
+def metadata():
+    """
+    Display metadata about the collections in the database
+    """
+    rich_console = Console()
+    
+    # Initialize database
+    db = GitGainsDB(config=DEFAULT_CONFIG)
+    
+    # Get metadata for all collections
+    metadata = db.get_all_collections_metadata()
+    
+    # Display metadata in a nice format
+    rich_console.print("\n[bold]GitGains Database Metadata[/bold]\n", style="green")
+    
+    for collection_name, collection_data in metadata.items():
+        doc_count = collection_data.get("document_count", 0)
+        
+        # Create a panel for each collection
+        rich_console.print(f"[bold]{collection_name}[/bold]: {doc_count} documents", style="blue")
+        
+        # Display metadata fields if available
+        metadata_fields = collection_data.get("metadata_fields", [])
+        if metadata_fields:
+            rich_console.print("  [bold]Metadata fields:[/bold]", style="yellow")
+            for field in metadata_fields:
+                rich_console.print(f"    - {field}")
+            
+            # Display some statistics about unique values
+            unique_values = collection_data.get("unique_values", {})
+            for field, values in unique_values.items():
+                if len(values) < 20:  # Only show if not too many values
+                    rich_console.print(f"    [bold]{field}[/bold] has {len(values)} unique values: {', '.join(str(v) for v in values[:5])}{' ...' if len(values) > 5 else ''}")
+                else:
+                    rich_console.print(f"    [bold]{field}[/bold] has {len(values)} unique values")
+        
+        rich_console.print("")  # Add a blank line between collections
 
 if __name__ == "__main__":
     cli()

@@ -19,6 +19,8 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
+.venv/
+venv/
 
 # IDE settings
 .idea/
@@ -38,3 +40,7 @@ var/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# RAG system
+scripts/rag_system/db/
+.env
